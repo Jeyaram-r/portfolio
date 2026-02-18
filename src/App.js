@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Certificates from "./components/Certificates";
+import Education from "./components/Education";
 
-function App() {
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import "./index.css";
+
+function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        
+        <Education/>
+        <Skills />
+        <Projects />
+        <Certificates />
+        <Contact />
+        <footer className="footer">© {new Date().getFullYear()} Jeyaram — Built with React</footer>
+      </main>
     </div>
   );
 }
-
 export default App;
