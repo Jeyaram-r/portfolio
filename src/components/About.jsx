@@ -5,8 +5,10 @@ export default function About() {
     <section id="about" className="section">
       <h2>About Me</h2>
       <p style={{color:"#94a3b8",marginTop:8}}>
-        I'm a Computer Science student building practical full-stack apps. I enjoy clean UI, efficient APIs, and deploying projects end-to-end.
-      </p>
+       Frontend Developer with strong knowledge of modern web technologies including React.js, React Native, Redux
+Toolkit, and TypeScript. Focused on building responsive and user-friendly applications using component-based
+architecture and reusable UI design. Familiar with React 18 and REST API integration. Passionate about writing
+clean code, optimizing performance, and continuously learning new technologies </p>
     </section>
   );
 }
