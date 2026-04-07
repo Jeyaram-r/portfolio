@@ -16,12 +16,9 @@ function App(){
       <Navbar />
       <main>
         <Hero />
-        <About />
         
-        <Education/>
-        <Skills />
-        <Projects />
-        <Certificates />
+        
+        
         <Contact />
         <footer className="footer">© {new Date().getFullYear()} Jeyaram — Built with React</footer>
       </main>
