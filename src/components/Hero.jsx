@@ -33,6 +33,10 @@ export default function Hero() {
       title: "Frontend",
       skills: ["HTML", "CSS", "JavaScript", "React.js"],
     },
+     {
+      title: "Mobile Development",
+      skills: ["React Native", "TypeScript", "Expo", "Flutter"],
+    },
     {
       title: "Backend",
       skills: ["Node.js", "Express.js", "PHP"],
@@ -43,7 +47,7 @@ export default function Hero() {
     },
     {
       title: "Tools & Platforms",
-      skills: ["Git", "GitHub", "VS Code", "Postman"],
+      skills: ["Git", "GitHub", "VS Code", "Version Control"],
     },
     {
       title: "Other Skills",
@@ -51,6 +55,15 @@ export default function Hero() {
     },
   ];
   const projects = [
+    {
+    name: "Crop Recomendation and Guidance",
+    description:
+      "This project is a web-based system that helps farmers select the best crop based on soil fertility and environmental conditions. Users can enter soil details such as pH, NPK values, and moisture to get suitable crop recommendations using machine learning. The system also provides market price information to support better farming decisions. It improves productivity through data-driven agriculture.",
+    image: "/public/images/fitness.png",
+    github: "https://github.com/Jeyaram-r/crop_predict_soil_fertility",
+    live: "https://crop-predict-soil-fertility.onrender.com/",
+    tech: ["Python", "Django", "Render","Machine Learning"],
+  },
   {
     name: "Helmet Shop (MERN)",
     description:
@@ -68,15 +81,7 @@ export default function Hero() {
     github: "https://github.com/jeyaramr/elearning-dashboard",
     tech: ["PHP", "MySQL", "JavaScript"],
   },
-  {
-    name: "Crop Recomendation and Guidance",
-    description:
-      "This project is a web-based system that helps farmers select the best crop based on soil fertility and environmental conditions. Users can enter soil details such as pH, NPK values, and moisture to get suitable crop recommendations using machine learning. The system also provides market price information to support better farming decisions. It improves productivity through data-driven agriculture.",
-    image: "/public/images/fitness.png",
-    github: "https://github.com/Jeyaram-r/crop_predict_soil_fertility",
-    live: "https://crop-predict-soil-fertility.onrender.com/",
-    tech: ["Python", "Django", "Render","Machine Learning"],
-  },
+  
 ];
 const certificateData = [
   {
@@ -109,12 +114,22 @@ const certificateData = [
       }}
       gap="40px"
     >
+          <header className="navbar">
+      <div className="brand">Jeyaram</div>
+      <nav className="links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
       {/* Profile Section */}
       <CommonGrid2
         display="flex"
         flexDirection="column"
         alignItems="center"
         gap="20px"
+        marginTop={"50px"}
       >
         <h1 style={{ fontSize: "32px", margin: 0 }}>
           Hi, I'm Jeyaram R👋
@@ -267,7 +282,7 @@ const certificateData = [
 
       {/* Skills Section */}
       <CommonGrid2
-        width="100%"
+        width="80%"
         display="flex"
         flexDirection="column"
         gap="25px"
