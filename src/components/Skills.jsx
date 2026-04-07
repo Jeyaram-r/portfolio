@@ -14,7 +14,7 @@ export default function Skills() {
         </div>
 
         <div className="skill-card">
-          <h3>Backend</h3>
+          <h3>Backendd</h3>
           <p>Node.js, Express.js, PHP</p>
         </div>
 
