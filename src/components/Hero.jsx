@@ -1,9 +1,19 @@
 import React from "react";
 import { CommonGrid2, CustomDiv } from "../common-components/style";
 import ProfilePic from "../assets/images/Profile.jpeg";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import SchoolIcon from '@mui/icons-material/School';
 import MenuBookTwoToneIcon from '@mui/icons-material/MenuBookTwoTone';
+import AIFluency from "../assets/images/AI_Fluency.png";
+import AWS from "../assets/images/AWS.png";
+import Claude from "../assets/images/Claude_Code_in_Action.png";
+import CloudeGoogle from "../assets/images/Cloud_Google.png";
+import UIDev from "../assets/images/UI_Developer.png";
+import FrontEnd from "../assets/images/Front_end_Certificate.png";
+import { Box } from "@mui/material";
+import CropRecommendation from "../assets/images/crop-recommendation.png";
+import Helmet from "../assets/images/helmetImg.png";
+import HotelApp from "../assets/images/Hotel-App.jpeg";
 export default function Hero() {
   const educationData = [
     {
@@ -33,7 +43,7 @@ export default function Hero() {
       title: "Frontend",
       skills: ["HTML", "CSS", "JavaScript", "React.js"],
     },
-     {
+    {
       title: "Mobile Development",
       skills: ["React Native", "TypeScript", "Expo", "Flutter"],
     },
@@ -56,51 +66,65 @@ export default function Hero() {
   ];
   const projects = [
     {
-    name: "Crop Recomendation and Guidance",
-    description:
-      "This project is a web-based system that helps farmers select the best crop based on soil fertility and environmental conditions. Users can enter soil details such as pH, NPK values, and moisture to get suitable crop recommendations using machine learning. The system also provides market price information to support better farming decisions. It improves productivity through data-driven agriculture.",
-    image: "/public/images/fitness.png",
-    github: "https://github.com/Jeyaram-r/crop_predict_soil_fertility",
-    live: "https://crop-predict-soil-fertility.onrender.com/",
-    tech: ["Python", "Django", "Render","Machine Learning"],
-  },
-  {
-    name: "Helmet Shop (MERN)",
-    description:
-      "Full-stack e-commerce app built with React, Node.js, Express and MongoDB. Features product listing, cart, checkout and admin panel.",
-    image: "/public/images/helmetshop.png",
-    github: "https://github.com/jeyaramr/mern_healmet-shop-main",
-    live: "https://helmetshop.vercel.app",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-  },
-  {
-    name: "E-Learning Dashboard",
-    description:
-      "Personalized learning platform with quizzes, resources and progress tracking built using PHP & MySQL.",
-    image: "/public/images/elearning.png",
-    github: "https://github.com/jeyaramr/elearning-dashboard",
-    tech: ["PHP", "MySQL", "JavaScript"],
-  },
-  
-];
-const certificateData = [
-  {
-    title: "Zoho CRM Training",
-    issuer: "Zoho",
-  },
-  {
-    title: "Internship – Web Development",
-    issuer: "Internship Completion",
-  },
-  {
-    title: "RPA Training",
-    issuer: "Robotic Process Automation Basics",
-  },
-  {
-    title: "Python Programming (Beginner)",
-    issuer: "Course Completion",
-  },
-];
+      name: "Crop Recomendation and Guidance",
+      description:
+        "This project is a web-based system that helps farmers select the best crop based on soil fertility and environmental conditions. Users can enter soil details such as pH, NPK values, and moisture to get suitable crop recommendations using machine learning. The system also provides market price information to support better farming decisions. It improves productivity through data-driven agriculture.",
+      image: CropRecommendation,
+      github: "https://github.com/Jeyaram-r/crop_predict_soil_fertility",
+      live: "https://crop-predict-soil-fertility.onrender.com/",
+      tech: ["Python", "Django", "Render", "Machine Learning"],
+    },
+    {
+      name: "Helmet Shop (MERN)",
+      description:
+        "A full-stack e-commerce web application built using the MERN stack (MongoDB, Express, React, Node.js). It allows users to browse helmet products, view details, and add items to a shopping cart. The app includes a secure checkout process and user-friendly interface. An admin panel is available for managing products and orders. Designed to deliver a smooth and responsive online shopping experience.",
+      image: Helmet,
+      github: "https://github.com/Jeyaram-r/helmet-shop",
+
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+    },
+    {
+      name: "Hotel App",
+      description:
+        "A Hotel Booking and Ordering App developed using Flutter, providing a smooth and responsive cross-platform user experience. The application integrates Firebase Authentication for secure user login and registration. Users can browse hotel details, view menus, and place orders directly through the app. All order data is stored and managed in Firebase Firestore for real-time updates. The system ensures efficient data handling and a seamless booking and ordering process. It is designed with a user-friendly interface to enhance customer convenience and engagement.",
+      image: HotelApp,
+      github: "https://github.com/Jeyaram-r/sriram",
+      tech: ["Flutter", "Firebase"],
+    },
+
+  ];
+  const certificateData = [
+    {
+      title: "AWS Cloud Practitioner",
+      issuer: "AWS",
+      image: AWS
+    },
+    {
+      title: "Front End Developer(React)",
+      issuer: "HackerRank",
+      image: FrontEnd
+    },
+    {
+      title: "UI Developer",
+      issuer: "Infosys Springboard",
+      image: UIDev
+    },
+    {
+      title: "Claude Code in Action",
+      issuer: "Anthropic",
+      image: Claude
+    },
+    {
+      title: "AI Fluency and Frameworks",
+      issuer: "Anthropic",
+      image: AIFluency
+    },
+    {
+      title: " Google Cloud career readliness Cloud Digital Leader track",
+      issuer: "Google Cloud",
+      image: CloudeGoogle
+    },
+  ];
   return (
     <CustomDiv
       width="100%"
@@ -114,15 +138,15 @@ const certificateData = [
       }}
       gap="40px"
     >
-          <header className="navbar">
-      <div className="brand">Jeyaram</div>
-      <nav className="links">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+      <header className="navbar">
+        <div className="brand">Jeyaram</div>
+        <nav className="links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
       {/* Profile Section */}
       <CommonGrid2
         display="flex"
@@ -359,44 +383,106 @@ const certificateData = [
         </CommonGrid2>
       </CommonGrid2>
       {/* Projects Section */}
-      <CommonGrid2 className="projects-container">
-        <Typography variant="h4" sx={{ color: "#fff", textAlign: "center", marginBottom: "10px" }}>
+      <CommonGrid2 width={"80%"}>
+        <Typography variant="h4" fontWeight={700} sx={{ color: "#fff", textAlign: "center", marginBottom: "10px" }}>
           My Projects
         </Typography>
 
-        <CommonGrid2 className="projects-grid">
-          {projects.map((p, i) => (
-            <article key={i} className="project-card">
-              {p.image ? (
-                <CommonGrid2 className="project-image-wrap">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="project-image"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      // optional: e.target.parentNode.classList.add('no-image');
-                    }}
-                  />
-                </CommonGrid2>
-              ) : null}
+        <CommonGrid2
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "24px",
+            alignItems: "stretch",
+          }}
 
-              <CommonGrid2 className="project-body">
-                <Typography variant="h6" sx={{ color: "#38bdf8", fontWeight: 600 }}>
+        >
+          {projects.map((p, i) => (
+            <CommonGrid2
+              key={i}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                background: "#1e293b",
+                borderRadius: "18px",
+                overflow: "hidden",
+                minHeight: "520px", // 🔥 ensures equal height
+                boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+                transition: "0.3s",
+                "&:hover": {
+                  transform: "translateY(-6px)",
+                },
+              }}
+            >
+              {/* IMAGE */}
+              <CommonGrid2
+                sx={{
+                  width: "100%",
+                  height: "180px",
+                  background: "#0f172a",
+                }}
+              >
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  onError={(e) => {
+                    e.target.src = "/fallback.png";
+                  }}
+                />
+              </CommonGrid2>
+
+              {/* BODY */}
+              <CommonGrid2
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  flexGrow: 1,
+                  padding: "16px",
+                  gap: "12px",
+                }}
+              >
+                {/* TITLE */}
+                <Typography
+                  variant="h6"
+                  sx={{ color: "#38bdf8", fontWeight: 600 }}
+                >
                   {p.name}
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#cbd5e1" }}>
+
+                {/* DESCRIPTION */}
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#cbd5e1",
+                    lineHeight: 1.6,
+                    flexGrow: 1, // 🔥 pushes buttons down evenly
+                  }}
+                >
                   {p.description}
                 </Typography>
 
-                <CommonGrid2 className="project-tech">
+                {/* TECH */}
+                <CommonGrid2
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "8px",
+                  }}
+                >
                   {p.tech.map((t, idx) => (
                     <Typography
                       key={idx}
                       variant="caption"
                       sx={{
-                        padding: "4px 8px",
-                        borderRadius: "16px",
+                        padding: "4px 10px",
+                        borderRadius: "20px",
                         background: "rgba(56,189,248,0.15)",
                         color: "#e2e8f0",
                         border: "1px solid rgba(56,189,248,0.3)",
@@ -407,28 +493,56 @@ const certificateData = [
                   ))}
                 </CommonGrid2>
 
-                <CommonGrid2 className="project-links">
-                  <a
+                {/* BUTTONS */}
+                <CommonGrid2
+                  sx={{
+                    display: "flex",
+                    gap: "10px",
+                    marginTop: "10px",
+                  }}
+                >
+                  <Button
+                    component="a"
                     href={p.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-outline"
+                    fullWidth
+                    sx={{
+                      backgroundColor: "#94a3b8",
+                      color: "#fff",
+                      textTransform: "none",
+                      borderRadius: "10px",
+                      "&:hover": {
+                        backgroundColor: "#0ea5e9",
+                      },
+                    }}
                   >
                     GitHub
-                  </a>
+                  </Button>
+
                   {p.live && (
-                    <a
+                    <Button
+                      component="a"
                       href={p.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-primary"
+                      fullWidth
+                      sx={{
+                        backgroundColor: "#38bdf8",
+                        color: "#fff",
+                        textTransform: "none",
+                        borderRadius: "10px",
+                        "&:hover": {
+                          backgroundColor: "#0ea5e9",
+                        },
+                      }}
                     >
                       Live Demo
-                    </a>
+                    </Button>
                   )}
                 </CommonGrid2>
               </CommonGrid2>
-            </article>
+            </CommonGrid2>
           ))}
         </CommonGrid2>
 
@@ -444,105 +558,127 @@ const certificateData = [
         </CommonGrid2>
       </CommonGrid2>
       {/* Certifications Section */}
-       <CommonGrid2
-      width="100%"
-      display="flex"
-      flexDirection="column"
-      gap="25px"
-    >
-      {/* Title */}
-      <Typography
-        variant="h4"
-        fontWeight={700}
-        sx={{
-          textAlign: "center",
-          color: "#fff",
-          letterSpacing: "1px",
-        }}
-      >
-        Certificates
-      </Typography>
-
-      {/* Grid */}
       <CommonGrid2
-        display="grid"
-        gridTemplateColumns="repeat(auto-fit, minmax(260px, 1fr))"
-        gap="20px"
+        width="80%"
+        display="flex"
+        flexDirection="column"
+        gap="25px"
       >
-        {certificateData.map((cert, index) => (
-          <CommonGrid2
-            key={index}
-            padding="20px"
-            borderRadius="16px"
-            display="flex"
-            flexDirection="column"
-            gap="10px"
-            background="linear-gradient(135deg, #0b1220, #1e293b)"
-            customStyle={{
-              border: "1px solid rgba(255,255,255,0.08)",
-              transition: "all 0.3s ease",
-              position: "relative",
-              overflow: "hidden",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.boxShadow =
-                "0 15px 35px rgba(0,0,0,0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            {/* Glow Effect */}
+        {/* Title */}
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          sx={{
+            textAlign: "center",
+            color: "#fff",
+            letterSpacing: "1px",
+          }}
+        >
+          Certificates
+        </Typography>
+
+        {/* Grid */}
+        <CommonGrid2
+          display="grid"
+          gridTemplateColumns="repeat(auto-fit, minmax(260px, 1fr))"
+          gap="20px"
+        >
+          {certificateData.map((cert, index) => (
             <CommonGrid2
+              key={index}
+              padding="20px"
+              borderRadius="16px"
+              display="flex"
+              flexDirection="column"
+              gap="10px"
+              background="linear-gradient(135deg, #0b1220, #1e293b)"
               customStyle={{
-                position: "absolute",
-                width: "120px",
-                height: "120px",
-                background: "rgba(56,189,248,0.15)",
-                borderRadius: "50%",
-                top: "-30px",
-                right: "-30px",
-                filter: "blur(40px)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                transition: "all 0.3s ease",
+                position: "relative",
+                overflow: "hidden",
+                cursor: "pointer",
               }}
-            />
-
-            {/* Title */}
-            <Typography
-              variant="h6"
-              sx={{ color: "#fff", fontWeight: 600, zIndex: 1 }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-8px)";
+                e.currentTarget.style.boxShadow =
+                  "0 15px 35px rgba(0,0,0,0.4)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
-              {cert.title}
-            </Typography>
+              {/* Glow Effect */}
+              <CommonGrid2
+                customStyle={{
+                  position: "absolute",
+                  width: "120px",
+                  height: "120px",
+                  background: "rgba(56,189,248,0.15)",
+                  borderRadius: "50%",
+                  top: "-30px",
+                  right: "-30px",
+                  filter: "blur(40px)",
+                }}
+              />
+              <CommonGrid2
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                height="120px"
+                customStyle={{ zIndex: 1 }}
+              >
+                <Box
+                  component="img"
+                  src={cert.image}
+                  alt={cert.title}
+                  sx={{
+                    width: 80,
+                    height: 80,
+                    objectFit: "contain",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                    },
+                  }}
+                />
+              </CommonGrid2>
 
-            {/* Issuer */}
-            <Typography
-              variant="body2"
-              sx={{ color: "#38bdf8", zIndex: 1 }}
-            >
-              {cert.issuer}
-            </Typography>
-          </CommonGrid2>
-        ))}
+              {/* Title */}
+              <Typography
+                variant="h6"
+                sx={{ color: "#fff", fontWeight: 600, zIndex: 1 }}
+              >
+                {cert.title}
+              </Typography>
+
+              {/* Issuer */}
+              <Typography
+                variant="body2"
+                sx={{ color: "#38bdf8", zIndex: 1 }}
+              >
+                {cert.issuer}
+              </Typography>
+            </CommonGrid2>
+          ))}
+        </CommonGrid2>
       </CommonGrid2>
-    </CommonGrid2>
-    <CommonGrid2>
-      <Typography>
-        My Journey
-      </Typography>
-    </CommonGrid2>
-    <CommonGrid2>
-      <Typography>
-        Work Experience
-      </Typography>
-    </CommonGrid2>
-    <CommonGrid2>
-      <Typography>
-        Hobbies & Interests
-      </Typography>
-    </CommonGrid2>
+      <CommonGrid2>
+        <Typography>
+          My Journey
+        </Typography>
+      </CommonGrid2>
+      <CommonGrid2>
+        <Typography>
+          Work Experience
+        </Typography>
+      </CommonGrid2>
+      <CommonGrid2>
+        <Typography>
+          Hobbies & Interests
+        </Typography>
+      </CommonGrid2>
     </CustomDiv>
   );
 }
