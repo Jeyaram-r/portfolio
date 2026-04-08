@@ -389,7 +389,7 @@ export default function Hero() {
 
                 </CommonGrid2>
 
-                {/* Buttons */}
+                
                 <CustomDiv style={{
                     marginTop: "30px",
                     opacity: heroVisible ? 1 : 0,
