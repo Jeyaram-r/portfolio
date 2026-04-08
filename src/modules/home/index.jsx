@@ -212,29 +212,22 @@ export default function Hero() {
     ];
     const experienceData = [
         {
-            year: "2023-24",
+            year: "2025-present",
             position: "Frontend Developer",
-            company: "Tech Solutions Ltd.",
-            location: "Chennai, India",
+            company: "Icanio Technologies",
+            location: "Tirunelveli, India",
             responsibilities: "Built responsive web apps using React, MUI, and REST APIs, optimized performance and accessibility.",
             techStack: ["React", "MUI", "JavaScript", "REST API"],
         },
         {
-            year: "2022-23",
-            position: "Intern Developer",
-            company: "Icanio Innovations",
-            location: "Tenkasi, India",
+            year: "2024-25",
+            position: "FullStack Developer Intern",
+            company: "Vetri Technologies",
+            location: "Surandai, Tenkasi, India",
             responsibilities: "Assisted in full-stack web development, implemented user-friendly UI components and integrated APIs.",
             techStack: ["React", "Node.js", "Express", "MongoDB"],
         },
-        {
-            year: "2021-22",
-            position: "Freelance Web Developer",
-            company: "Self-Employed",
-            location: "Remote",
-            responsibilities: "Developed personal and client projects, including e-commerce websites and dashboards.",
-            techStack: ["React", "Next.js", "MUI", "Firebase"],
-        },
+       
     ];
     const [heroVisible, setHeroVisible] = useState(false);
     useEffect(() => {

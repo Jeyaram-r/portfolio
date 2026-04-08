@@ -83,7 +83,7 @@ export default function WorkExperience({ experienceData }) {
                                 <Typography variant="body2" color="#6b7280" mt={0.5}>
                                     {exp.location}
                                 </Typography>
-                                <Typography variant="body2" color="#111827" mt={1}>
+                                <Typography variant="body2" color="#c5c5c5" mt={1}>
                                     {exp.responsibilities}
                                 </Typography>
                                 {exp.techStack && (
