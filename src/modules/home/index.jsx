@@ -265,10 +265,11 @@ export default function Hero() {
                     }}
                 >
                     {/* BRAND */}
-                    <Typography fontSize={22} fontWeight={700}>
+                    <CommonGrid2 gap={"24px"} width={"15%"}>
+                    <Typography fontSize={22} fontWeight={700} gap={"24px"} >
                         Jeyaram R
-
                     </Typography>
+                    </CommonGrid2>
 
 
 
@@ -284,7 +285,7 @@ export default function Hero() {
                         {["About", "Education", "Projects", "Contact"].map((item) => (
                             <a
                                 key={item}
-                                href={`/home/#${item.toLowerCase()}`}
+                                href={`#${item.toLowerCase()}`}
                                 style={{
                                     textDecoration: "none",
                                     color: "#ffffff",
@@ -406,7 +407,7 @@ export default function Hero() {
                     >
                         <a
 
-                            href={`/home/#projects`}
+                            href={`#projects`}
                             style={{
                                 padding: "12px 24px",
                                 background: "#38bdf8",
@@ -421,7 +422,7 @@ export default function Hero() {
 
                         <a
 
-                            href={`/home/#contact`}
+                            href={`#contact`}
                             style={{
                                 padding: "12px 24px",
                                 border: "2px solid #38bdf8",
