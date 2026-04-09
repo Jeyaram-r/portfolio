@@ -6,7 +6,7 @@ export default function Project({ projects }) {
     <CommonGrid2 width={"80%"}
       id="projects"
       customStyle={{
-        scrollMarginTop: "80px",
+        scrollMarginTop: "100px",
       }}
     >
       <Typography variant="h4" fontWeight={700} sx={{ color: "#fff", textAlign: "center", marginBottom: "10px" }}>

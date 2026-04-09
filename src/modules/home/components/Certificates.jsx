@@ -10,7 +10,7 @@ export default function Certificates({ certificateData }) {
       flexDirection="column"
       gap="25px"
       customStyle={{
-        scrollMarginTop: "80px",
+        scrollMarginTop: "100px",
       }}
     >
       {/* Title */}

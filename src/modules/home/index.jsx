@@ -23,6 +23,8 @@ import WorkIcon from '@mui/icons-material/Work';
 import StarIcon from '@mui/icons-material/Star';
 import WorkExperience from './components/WorkExperience';
 import { useEffect, useRef, useState } from "react";
+import { useMediaQuery, useTheme } from "@mui/material";
+import Navbar from './components/Navbar';
 function useScrollAnim(delay = 0) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -73,6 +75,9 @@ function AnimatedSection({ children, delay = 0, direction = "up", style = {} }) 
     );
 }
 export default function Hero() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const isTablet = useMediaQuery(theme.breakpoints.down("md"));
     const educationData = [
         {
             title: "B.E Computer Science Engineering",
@@ -216,7 +221,7 @@ export default function Hero() {
             position: "Frontend Developer",
             company: "Icanio Technologies",
             location: "Tirunelveli, India",
-            responsibilities: "Built responsive web apps using React, MUI, and REST APIs, optimized performance and accessibility.",
+            responsibilities: "As a Frontend Developer at Icanio Technologies, I design and develop responsive, user-centric web applications using modern frameworks such as React.js. I collaborate closely with designers and backend developers to deliver seamless and scalable digital solutions. My role involves building reusable components, optimizing application performance, and ensuring cross-browser compatibility. I focus on writing clean, maintainable code while adhering to industry best practices. Through this experience, I have strengthened my expertise in UI/UX development, state management, and API integration.",
             techStack: ["React", "MUI", "JavaScript", "REST API"],
         },
         {
@@ -224,7 +229,7 @@ export default function Hero() {
             position: "FullStack Developer Intern",
             company: "Vetri Technologies",
             location: "Surandai, Tenkasi, India",
-            responsibilities: "Assisted in full-stack web development, implemented user-friendly UI components and integrated APIs.",
+            responsibilities: "As a Full Stack Developer Intern at Vetri Technologies, I gained hands-on experience in developing and deploying dynamic web applications using the MERN stack. I contributed to both frontend and backend development, creating responsive user interfaces with React and building robust RESTful APIs using Node.js and Express. My responsibilities included integrating databases with MongoDB, implementing authentication features, and optimizing application performance. I collaborated with senior developers in an agile environment, enhancing my problem-solving and debugging skills. This internship strengthened my understanding of end-to-end development and industry best practices in scalable software design.",
             techStack: ["React", "Node.js", "Express", "MongoDB"],
         },
        
@@ -264,178 +269,180 @@ export default function Hero() {
                         boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
                     }}
                 >
-                    {/* BRAND */}
-                    <CommonGrid2 gap={"24px"} width={"15%"}>
-                    <Typography fontSize={22} fontWeight={700} gap={"24px"} >
-                        Jeyaram R
-                    </Typography>
-                    </CommonGrid2>
-
-
-
-                    {/* NAV LINKS */}
-                    <CommonGrid2
-                        display="flex"
-                        gap="24px"
-                        alignItems="center"
-                    >
-                        <marquee behavior="scroll" direction="left">
-                            Welcome to my portfolio! Explore my projects, skills, and experience as a passionate frontend developer. Let's build something amazing together! 🚀
-                        </marquee>
-                        {["About", "Education", "Projects", "Contact"].map((item) => (
-                            <a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                style={{
-                                    textDecoration: "none",
-                                    color: "#ffffff",
-                                    fontSize: "16px",
-                                    fontWeight: 500,
-                                    transition: "0.3s",
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = "#1976d2")}
-                                onMouseOut={(e) => (e.target.style.color = "#9f9d9d")}
-                            >
-                                {item}
-                            </a>
-                        ))}
-                    </CommonGrid2>
+                    <Navbar/>
+                   
                 </CommonGrid2>
 
 
                 {/* Profile Section */}
-                <CommonGrid2
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                    justifyContent="center"
-                    gap="16px"
-                    customStyle={{
-                        opacity: heroVisible ? 1 : 0,
-                        transform: heroVisible ? "translateY(0)" : "translateY(40px)",
-                        transition: "opacity 0.8s ease, transform 0.8s ease",
-                    }}
-                // marginTop="60px"
-                >
+                {/* ── Profile Section ── */}
+<CommonGrid2
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    justifyContent="center"
+    gap={isMobile ? "12px" : "16px"}
+    customStyle={{
+        opacity: heroVisible ? 1 : 0,
+        transform: heroVisible ? "translateY(0)" : "translateY(40px)",
+        transition: "opacity 0.8s ease, transform 0.8s ease",
+        padding: isMobile ? "0 16px" : "0 24px",
+        width: "100%",
+        boxSizing: "border-box",
+    }}
+>
+    {/* PROFILE IMAGE */}
+    <img
+        src={crop}
+        alt="Profile"
+        style={{
+            width: isMobile ? "140px" : "200px",
+            height: isMobile ? "140px" : "200px",
+            borderRadius: "10%",
+            objectFit: "cover",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            opacity: heroVisible ? 1 : 0,
+            transform: heroVisible ? "scale(1)" : "scale(0.88)",
+            transition: "opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s",
+        }}
+    />
 
+    {/* ROLE SECTION */}
+    <CommonGrid2
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        gap={isMobile ? "6px" : "10px"}
+        customStyle={{
+            flexWrap: "wrap",
+            textAlign: "center",
+            padding: isMobile ? "0 8px" : "0",
+        }}
+    >
+        <Typography
+            fontSize={isMobile ? 22 : isTablet ? 28 : 34}
+            fontWeight={700}
+            style={{
+                margin: 0,
+                opacity: heroVisible ? 1 : 0,
+                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
+                whiteSpace: isMobile ? "normal" : "nowrap",
+                textAlign: "center",
+            }}
+        >
+            Hi, I'm Jeyaram R 👋
+        </Typography>
 
-                    {/* PROFILE IMAGE */}
-                    <img
-                        src={crop}
-                        alt="Profile"
-                        style={{
-                            width: "200px",
-                            height: "200px",
-                            borderRadius: "10%",
-                            objectFit: "cover",
-                            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                            opacity: heroVisible ? 1 : 0,
-                            transform: heroVisible ? "scale(1)" : "scale(0.88)",
-                            transition: "opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s",
+        <ComputerIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
 
-                        }}
-                    />
+        <Typography
+            fontSize={isMobile ? 18 : isTablet ? 24 : 30}
+            fontWeight={700}
+            style={{
+                opacity: heroVisible ? 1 : 0,
+                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
+                color: "#38bdf8",
+            }}
+        >
+            Frontend Developer
+        </Typography>
+    </CommonGrid2>
 
+    {/* TAGLINE */}
+    <Typography
+        fontSize={isMobile ? 13 : isTablet ? 14 : 16}
+        color="#94a3b8"
+        style={{
+            textAlign: "center",
+            maxWidth: isMobile ? "95%" : isTablet ? "85%" : "75%",
+            lineHeight: 1.7,
+            opacity: heroVisible ? 1 : 0,
+            transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s",
+        }}
+    >
+        Frontend Developer with strong knowledge of modern web technologies including React.js,
+        React Native, Redux Toolkit, and TypeScript. Focused on building responsive and
+        user-friendly applications using component-based architecture and reusable UI design.
+        Familiar with React 18 and REST API integration. Passionate about writing clean code,
+        optimizing performance, and continuously learning new technologies.
+    </Typography>
+</CommonGrid2>
 
-                    {/* ROLE SECTION */}
-                    <CommonGrid2
-                        display="flex"
-                        alignItems="center"
-                        gap="10px"
-                    >
-                        <Typography
-                            fontSize={34}
-                            fontWeight={700}
+{/* ── CTA Buttons ── */}
+<CustomDiv
+    style={{
+        marginTop: isMobile ? "16px" : "30px",
+        opacity: heroVisible ? 1 : 0,
+        transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.7s ease 0.65s, transform 0.7s ease 0.65s",
+        width: "100%",
+        boxSizing: "border-box",
+        padding: isMobile ? "0 24px" : "0",
+    }}
+>
+    <CommonGrid2
+        style={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            gap: isMobile ? "12px" : "15px",
+            justifyContent: "center",
+            alignItems: "center",
+        }}
+    >
+        <a
+            href="#projects"
+            style={{
+                padding: isMobile ? "11px 0" : "12px 24px",
+                width: isMobile ? "100%" : "auto",
+                textAlign: "center",
+                background: "#38bdf8",
+                color: "#0f172a",
+                borderRadius: "8px",
+                textDecoration: "none",
+                fontWeight: "600",
+                fontSize: isMobile ? 14 : 16,
+                boxSizing: "border-box",
+                display: "block",
+                transition: "background 0.3s",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.background = "#0ea5e9")}
+            onMouseOut={(e) => (e.currentTarget.style.background = "#38bdf8")}
+        >
+            View My Work
+        </a>
 
-                            style={{
-                                margin: 0,
-                                opacity: heroVisible ? 1 : 0,
-                                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-                                transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
-                            }}
-                        >
-                            Hi, I'm Jeyaram R 👋
-                        </Typography>
-                        <ComputerIcon sx={{ fontSize: 28 }} />
-
-                        <Typography
-                            fontSize={30}
-                            fontWeight={700}
-                            style={{
-                                opacity: heroVisible ? 1 : 0,
-                                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-                                transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
-                            }}
-                        >
-                            Frontend Developer
-                        </Typography>
-                    </CommonGrid2>
-
-                    {/* SHORT TAGLINE */}
-                    <Typography
-                        fontSize={16}
-                        color="#fff"
-                        style={{
-                            textAlign: "center",
-                            maxWidth: "75%",
-                            opacity: heroVisible ? 1 : 0,
-                            transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-                            transition: "opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s",
-                        }}
-                    >
-                        Having 6+months of experience in frontend development, I specialize in creating responsive and user-friendly web applications using React.js, React Native, Redux Toolkit, and TypeScript. I am passionate about building seamless user interfaces and continuously learning new technologies to enhance my skills.
-                    </Typography>
-
-
-
-                </CommonGrid2>
-
-                
-                <CustomDiv style={{
-                    marginTop: "30px",
-                    opacity: heroVisible ? 1 : 0,
-                    transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-                    transition: "opacity 0.7s ease 0.65s, transform 0.7s ease 0.65s",
-                }}
-                >
-                    <CommonGrid2
-                        style={{
-                            display: "flex",
-                            gap: "15px",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <a
-
-                            href={`#projects`}
-                            style={{
-                                padding: "12px 24px",
-                                background: "#38bdf8",
-                                color: "white",
-                                borderRadius: "8px",
-                                textDecoration: "none",
-                                fontWeight: "600",
-                            }}
-                        >
-                            View My Work
-                        </a>
-
-                        <a
-
-                            href={`#contact`}
-                            style={{
-                                padding: "12px 24px",
-                                border: "2px solid #38bdf8",
-                                color: "#38bdf8",
-                                borderRadius: "8px",
-                                textDecoration: "none",
-                                fontWeight: "600",
-                            }}
-                        >
-                            Contact Me
-                        </a>
-                    </CommonGrid2>
-                </CustomDiv>
+        <a
+            href="#contact"
+            style={{
+                padding: isMobile ? "11px 0" : "12px 24px",
+                width: isMobile ? "100%" : "auto",
+                textAlign: "center",
+                border: "2px solid #38bdf8",
+                color: "#38bdf8",
+                borderRadius: "8px",
+                textDecoration: "none",
+                fontWeight: "600",
+                fontSize: isMobile ? 14 : 16,
+                boxSizing: "border-box",
+                display: "block",
+                transition: "background 0.3s, color 0.3s",
+            }}
+            onMouseOver={(e) => {
+                e.currentTarget.style.background = "#38bdf8";
+                e.currentTarget.style.color = "#0f172a";
+            }}
+            onMouseOut={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#38bdf8";
+            }}
+        >
+            Contact Me
+        </a>
+    </CommonGrid2>
+</CustomDiv>
                 <AnimatedSection direction="up" delay={0}>
                     <About />
                 </AnimatedSection>

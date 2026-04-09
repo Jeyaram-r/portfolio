@@ -10,7 +10,7 @@ export default function Skills({ skillsData }) {
       flexDirection="column"
       gap="30px"
       customStyle={{
-        scrollMarginTop: "80px",
+        scrollMarginTop: "100px",
       }}
     >
       {/* Title */}
