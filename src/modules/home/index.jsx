@@ -24,9 +24,8 @@ import StarIcon from '@mui/icons-material/Star';
 // import WorkExperience from './components/WorkExperience';
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
-import React, {  lazy, Suspense } from "react";
-
-// import Navbar from './components/Navbar';
+import React, { lazy, Suspense } from "react";
+import ImageWithLoader from "../../common-components/ImageWithLoader";
 const Certifications = lazy(() =>
     import("../home/components/Certificates")
 );
@@ -266,7 +265,7 @@ export default function Hero() {
             responsibilities: "As a Full Stack Developer Intern at Vetri Technologies, I gained hands-on experience in developing and deploying dynamic web applications using the MERN stack. I contributed to both frontend and backend development, creating responsive user interfaces with React and building robust RESTful APIs using Node.js and Express. My responsibilities included integrating databases with MongoDB, implementing authentication features, and optimizing application performance. I collaborated with senior developers in an agile environment, enhancing my problem-solving and debugging skills. This internship strengthened my understanding of end-to-end development and industry best practices in scalable software design.",
             techStack: ["React", "Node.js", "Express", "MongoDB"],
         },
-       
+
     ];
     const [heroVisible, setHeroVisible] = useState(false);
     useEffect(() => {
@@ -303,210 +302,208 @@ export default function Hero() {
                         boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
                     }}
                 ><Suspense fallback={<Loader />}>
-    <Navbar />
-</Suspense>
-                   
+                        <Navbar />
+                    </Suspense>
+
                 </CommonGrid2>
 
 
                 {/* Profile Section */}
                 {/* ── Profile Section ── */}
-<CommonGrid2
-    display="flex"
-    flexDirection="column"
-    alignItems="center"
-    justifyContent="center"
-    gap={isMobile ? "12px" : "16px"}
-    customStyle={{
-        opacity: heroVisible ? 1 : 0,
-        transform: heroVisible ? "translateY(0)" : "translateY(40px)",
-        transition: "opacity 0.8s ease, transform 0.8s ease",
-        padding: isMobile ? "0 16px" : "0 24px",
-        width: "100%",
-        boxSizing: "border-box",
-    }}
->
-    {/* PROFILE IMAGE */}
-    <img
-        src={crop}
-        alt="Profile"
-        style={{
-            width: isMobile ? "140px" : "200px",
-            height: isMobile ? "140px" : "200px",
-            borderRadius: "10%",
-            objectFit: "cover",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            opacity: heroVisible ? 1 : 0,
-            transform: heroVisible ? "scale(1)" : "scale(0.88)",
-            transition: "opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s",
-        }}
-    />
-
-    {/* ROLE SECTION */}
-    <CommonGrid2
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        gap={isMobile ? "6px" : "10px"}
-        customStyle={{
-            flexWrap: "wrap",
-            textAlign: "center",
-            padding: isMobile ? "0 8px" : "0",
-        }}
-    >
-        <Typography
-            fontSize={isMobile ? 22 : isTablet ? 28 : 34}
-            fontWeight={700}
-            style={{
-                margin: 0,
-                opacity: heroVisible ? 1 : 0,
-                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-                transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
-                whiteSpace: isMobile ? "normal" : "nowrap",
-                textAlign: "center",
-            }}
-        >
-            Hi, I'm Jeyaram R 👋
-        </Typography>
-
-        <ComputerIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
-
-        <Typography
-            fontSize={isMobile ? 18 : isTablet ? 24 : 30}
-            fontWeight={700}
-            style={{
-                opacity: heroVisible ? 1 : 0,
-                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-                transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
-                color: "#38bdf8",
-            }}
-        >
-            Frontend Developer
-        </Typography>
-    </CommonGrid2>
-
-    {/* TAGLINE */}
-    <Typography
-        fontSize={isMobile ? 13 : isTablet ? 14 : 16}
-        color="#94a3b8"
-        style={{
-            textAlign: "center",
-            maxWidth: isMobile ? "95%" : isTablet ? "85%" : "75%",
-            lineHeight: 1.7,
-            opacity: heroVisible ? 1 : 0,
-            transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s",
-        }}
-    >
-        Frontend Developer with strong knowledge of modern web technologies including React.js,
-        React Native, Redux Toolkit, and TypeScript. Focused on building responsive and
-        user-friendly applications using component-based architecture and reusable UI design.
-        Familiar with React 18 and REST API integration. Passionate about writing clean code,
-        optimizing performance, and continuously learning new technologies.
-    </Typography>
-</CommonGrid2>
-
-{/* ── CTA Buttons ── */}
-<CustomDiv
+                <CommonGrid2
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    justifyContent="center"
+                    gap={isMobile ? "12px" : "16px"}
+                    customStyle={{
+                        opacity: heroVisible ? 1 : 0,
+                        transform: heroVisible ? "translateY(0)" : "translateY(40px)",
+                        transition: "opacity 0.8s ease, transform 0.8s ease",
+                        padding: isMobile ? "0 16px" : "0 24px",
+                        width: "100%",
+                        boxSizing: "border-box",
+                    }}
+                >
+                    {/* PROFILE IMAGE */}
+                  <ImageWithLoader
+    src={crop}
+    alt="Profile"
+    width={isMobile ? "140px" : "200px"}
+    height={isMobile ? "140px" : "200px"}
+    borderRadius="10%"
     style={{
-        marginTop: isMobile ? "16px" : "30px",
-        opacity: heroVisible ? 1 : 0,
-        transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.7s ease 0.65s, transform 0.7s ease 0.65s",
-        width: "100%",
-        boxSizing: "border-box",
-        padding: isMobile ? "0 24px" : "0",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+        transform: heroVisible ? "scale(1)" : "scale(0.88)",
+        transition: "opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s",
     }}
->
-    <CommonGrid2
-        style={{
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            gap: isMobile ? "12px" : "15px",
-            justifyContent: "center",
-            alignItems: "center",
-        }}
-    >
-        <a
-            href="#projects"
-            style={{
-                padding: isMobile ? "11px 0" : "12px 24px",
-                width: isMobile ? "100%" : "auto",
-                textAlign: "center",
-                background: "#38bdf8",
-                color: "#0f172a",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontWeight: "600",
-                fontSize: isMobile ? 14 : 16,
-                boxSizing: "border-box",
-                display: "block",
-                transition: "background 0.3s",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.background = "#0ea5e9")}
-            onMouseOut={(e) => (e.currentTarget.style.background = "#38bdf8")}
-        >
-            View My Work
-        </a>
+/>
 
-        <a
-            href="#contact"
-            style={{
-                padding: isMobile ? "11px 0" : "12px 24px",
-                width: isMobile ? "100%" : "auto",
-                textAlign: "center",
-                border: "2px solid #38bdf8",
-                color: "#38bdf8",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontWeight: "600",
-                fontSize: isMobile ? 14 : 16,
-                boxSizing: "border-box",
-                display: "block",
-                transition: "background 0.3s, color 0.3s",
-            }}
-            onMouseOver={(e) => {
-                e.currentTarget.style.background = "#38bdf8";
-                e.currentTarget.style.color = "#0f172a";
-            }}
-            onMouseOut={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#38bdf8";
-            }}
-        >
-            Contact Me
-        </a>
-    </CommonGrid2>
-</CustomDiv>
-<Suspense fallback={<Loader />}>
-                <AnimatedSection direction="up" delay={0}>
-                    <About />
-                </AnimatedSection>
+                    {/* ROLE SECTION */}
+                    <CommonGrid2
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        gap={isMobile ? "6px" : "10px"}
+                        customStyle={{
+                            flexWrap: "wrap",
+                            textAlign: "center",
+                            padding: isMobile ? "0 8px" : "0",
+                        }}
+                    >
+                        <Typography
+                            fontSize={isMobile ? 22 : isTablet ? 28 : 34}
+                            fontWeight={700}
+                            style={{
+                                margin: 0,
+                                opacity: heroVisible ? 1 : 0,
+                                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+                                transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
+                                whiteSpace: isMobile ? "normal" : "nowrap",
+                                textAlign: "center",
+                            }}
+                        >
+                            Hi, I'm Jeyaram R 👋
+                        </Typography>
 
-                <AnimatedSection direction="left" delay={0}>
-                    <Education educationData={educationData} />
-                </AnimatedSection>
+                        <ComputerIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
 
-                <AnimatedSection direction="right" delay={0}>
-                    <WorkExperience experienceData={experienceData} />
-                </AnimatedSection>
-                {/* Skills Section */}
-                <AnimatedSection direction="up" delay={0}>
-                    <Skills skillsData={skillsData} />
-                </AnimatedSection>
-                {/* Projects Section */}
-                <AnimatedSection direction="scale" delay={0}>
-                    <Projects projects={projects} />
-                </AnimatedSection>
-                {/* Certifications Section */}
-                <AnimatedSection direction="up" delay={0}>
-                    <Certifications certificateData={certificateData} />
-                </AnimatedSection>
+                        <Typography
+                            fontSize={isMobile ? 18 : isTablet ? 24 : 30}
+                            fontWeight={700}
+                            style={{
+                                opacity: heroVisible ? 1 : 0,
+                                transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+                                transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
+                                color: "#38bdf8",
+                            }}
+                        >
+                            Frontend Developer
+                        </Typography>
+                    </CommonGrid2>
+
+                    {/* TAGLINE */}
+                    <Typography
+                        fontSize={isMobile ? 13 : isTablet ? 14 : 16}
+                        color="#94a3b8"
+                        style={{
+                            textAlign: "center",
+                            maxWidth: isMobile ? "95%" : isTablet ? "85%" : "75%",
+                            lineHeight: 1.7,
+                            opacity: heroVisible ? 1 : 0,
+                            transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+                            transition: "opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s",
+                        }}
+                    >
+                        Frontend Developer with strong knowledge of modern web technologies including React.js,
+                        React Native, Redux Toolkit, and TypeScript. Focused on building responsive and
+                        user-friendly applications using component-based architecture and reusable UI design.
+                        Familiar with React 18 and REST API integration. Passionate about writing clean code,
+                        optimizing performance, and continuously learning new technologies.
+                    </Typography>
+                </CommonGrid2>
+
+                {/* ── CTA Buttons ── */}
+                <CustomDiv
+                    style={{
+                        marginTop: isMobile ? "16px" : "30px",
+                        opacity: heroVisible ? 1 : 0,
+                        transform: heroVisible ? "translateY(0)" : "translateY(20px)",
+                        transition: "opacity 0.7s ease 0.65s, transform 0.7s ease 0.65s",
+                        width: "100%",
+                        boxSizing: "border-box",
+                        padding: isMobile ? "0 24px" : "0",
+                    }}
+                >
+                    <CommonGrid2
+                        style={{
+                            display: "flex",
+                            flexDirection: isMobile ? "column" : "row",
+                            gap: isMobile ? "12px" : "15px",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <a
+                            href="#projects"
+                            style={{
+                                padding: isMobile ? "11px 0" : "12px 24px",
+                                width: isMobile ? "100%" : "auto",
+                                textAlign: "center",
+                                background: "#38bdf8",
+                                color: "#0f172a",
+                                borderRadius: "8px",
+                                textDecoration: "none",
+                                fontWeight: "600",
+                                fontSize: isMobile ? 14 : 16,
+                                boxSizing: "border-box",
+                                display: "block",
+                                transition: "background 0.3s",
+                            }}
+                            onMouseOver={(e) => (e.currentTarget.style.background = "#0ea5e9")}
+                            onMouseOut={(e) => (e.currentTarget.style.background = "#38bdf8")}
+                        >
+                            View My Work
+                        </a>
+
+                        <a
+                            href="#contact"
+                            style={{
+                                padding: isMobile ? "11px 0" : "12px 24px",
+                                width: isMobile ? "100%" : "auto",
+                                textAlign: "center",
+                                border: "2px solid #38bdf8",
+                                color: "#38bdf8",
+                                borderRadius: "8px",
+                                textDecoration: "none",
+                                fontWeight: "600",
+                                fontSize: isMobile ? 14 : 16,
+                                boxSizing: "border-box",
+                                display: "block",
+                                transition: "background 0.3s, color 0.3s",
+                            }}
+                            onMouseOver={(e) => {
+                                e.currentTarget.style.background = "#38bdf8";
+                                e.currentTarget.style.color = "#0f172a";
+                            }}
+                            onMouseOut={(e) => {
+                                e.currentTarget.style.background = "transparent";
+                                e.currentTarget.style.color = "#38bdf8";
+                            }}
+                        >
+                            Contact Me
+                        </a>
+                    </CommonGrid2>
+                </CustomDiv>
+                <Suspense fallback={<Loader />}>
+                    <AnimatedSection direction="up" delay={0}>
+                        <About />
+                    </AnimatedSection>
+
+                    <AnimatedSection direction="left" delay={0}>
+                        <Education educationData={educationData} />
+                    </AnimatedSection>
+
+                    <AnimatedSection direction="right" delay={0}>
+                        <WorkExperience experienceData={experienceData} />
+                    </AnimatedSection>
+                    {/* Skills Section */}
+                    <AnimatedSection direction="up" delay={0}>
+                        <Skills skillsData={skillsData} />
+                    </AnimatedSection>
+                    {/* Projects Section */}
+                    <AnimatedSection direction="scale" delay={0}>
+                        <Projects projects={projects} />
+                    </AnimatedSection>
+                    {/* Certifications Section */}
+                    <AnimatedSection direction="up" delay={0}>
+                        <Certifications certificateData={certificateData} />
+                    </AnimatedSection>
                 </Suspense>
             </CustomDiv>
             <Suspense fallback={<Loader />}>
-    <Contact />
-</Suspense>
+                <Contact />
+            </Suspense>
         </CustomDiv>
 
     );
