@@ -13,18 +13,52 @@ import FrontEnd from "../../assets/images/Front_end_Certificate.png";
 import Helmet from "../../assets/images/helmetImg.png";
 import HotelApp from "../../assets/images/Hotel-App.jpeg";
 import UIDev from "../../assets/images/UI_Developer.png";
-import Certifications from "../home/components/Certificates";
-import Education from "../home/components/Education";
-import Projects from "../home/components/Projects";
-import Skills from "../home/components/Skills";
-import Contact from "../home/components/Contact";
-import About from './components/About';
+// import Certifications from "../home/components/Certificates";
+// import Education from "../home/components/Education";
+// import Projects from "../home/components/Projects";
+// import Skills from "../home/components/Skills";
+// import Contact from "../home/components/Contact";
+// import About from './components/About';
 import WorkIcon from '@mui/icons-material/Work';
 import StarIcon from '@mui/icons-material/Star';
-import WorkExperience from './components/WorkExperience';
+// import WorkExperience from './components/WorkExperience';
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
-import Navbar from './components/Navbar';
+import React, {  lazy, Suspense } from "react";
+
+// import Navbar from './components/Navbar';
+const Certifications = lazy(() =>
+    import("../home/components/Certificates")
+);
+const Education = lazy(() =>
+    import("../home/components/Education")
+);
+const Projects = lazy(() =>
+    import("../home/components/Projects")
+);
+const Skills = lazy(() =>
+    import("../home/components/Skills")
+);
+const Contact = lazy(() =>
+    import("../home/components/Contact")
+);
+const About = lazy(() =>
+    import("./components/About")
+);
+const WorkExperience = lazy(() =>
+    import("./components/WorkExperience")
+);
+const Navbar = lazy(() =>
+    import("./components/Navbar")
+);
+const Loader = () => (
+    <Typography
+        align="center"
+        sx={{ color: "#38bdf8", padding: "20px" }}
+    >
+        Loading...
+    </Typography>
+);
 function useScrollAnim(delay = 0) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -268,8 +302,9 @@ export default function Hero() {
                     customStyle={{
                         boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
                     }}
-                >
-                    <Navbar/>
+                ><Suspense fallback={<Loader />}>
+    <Navbar />
+</Suspense>
                    
                 </CommonGrid2>
 
@@ -443,6 +478,7 @@ export default function Hero() {
         </a>
     </CommonGrid2>
 </CustomDiv>
+<Suspense fallback={<Loader />}>
                 <AnimatedSection direction="up" delay={0}>
                     <About />
                 </AnimatedSection>
@@ -466,8 +502,11 @@ export default function Hero() {
                 <AnimatedSection direction="up" delay={0}>
                     <Certifications certificateData={certificateData} />
                 </AnimatedSection>
+                </Suspense>
             </CustomDiv>
-            <Contact />
+            <Suspense fallback={<Loader />}>
+    <Contact />
+</Suspense>
         </CustomDiv>
 
     );
