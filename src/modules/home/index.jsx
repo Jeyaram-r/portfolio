@@ -402,8 +402,6 @@ export default function Hero() {
                         optimizing performance, and continuously learning new technologies.
                     </Typography>
                 </CommonGrid2>
-
-                {/* ── CTA Buttons ── */}
                 <CustomDiv
                     style={{
                         marginTop: isMobile ? "16px" : "30px",
