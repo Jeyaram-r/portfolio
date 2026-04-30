@@ -139,8 +139,8 @@ export default function Hero() {
             title: "Frontend",
             skills: [
                 { name: "React", level: 90 },
-                { name: "JavaScript", level: 85 },
-                { name: "MUI", level: 80 },
+                { name: "JavaScript", level: 90 },
+                { name: "MUI", level: 90 },
                 { name: "HTML", level: 85 },
                 { name: "CSS", level: 85 },
             ],
